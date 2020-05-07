@@ -1,3 +1,6 @@
 # Basic-Diet-Tracker-Made-with-Flask
 A Basic Web Application With Flask 
-<h4> App Version 1 can only add Food Items to the Web Page</h4>
+<h4> App Version 1 can add Food Items to the Web Page<br> after Clicking on Add the Food Gets added to the MySQL Database<br></h4>
+
+
+![](App%20Version%201.0/AddingFood.gif)
