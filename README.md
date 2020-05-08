@@ -8,5 +8,11 @@
   A few Changes Still Left To Be Made<br>
   </h3>
 
+<h3> Adding A Food To with the belwo Screen>/h3>
 
 ![](App%20Version%201.0/AddingFood.gif)
+
+<h3> Then Selecting the Food that you added if u have eaten on that Date <br>
+ After Selecting the Food the Total Section Gets Updated Automatically</h3>
+ 
+![](App%20Version%202/ViewScreen.gif)
