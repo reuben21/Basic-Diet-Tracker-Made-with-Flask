@@ -1,5 +1,5 @@
 # Basic-Diet-Tracker-Made-Using-Flask-with-MySQL-Connectivity
-A Basic Web Application With Flask 
+<h2> A Basic Web Application With Flask </h2> 
 <h3> App Version 1 Incomplete <br>
  App Version 2 Update to Version 1 <br>
   We can add Food Items to the Web Page<br> <br> 
