@@ -16,7 +16,7 @@
 
 ![](App%20Version%203.0%20Final/ViewDate.gif)
 
-<h3> Adding A Food To with the below Screen>/h3>
+<h3> Adding A Food To with the below Screen</h3>
 
 ![](App%20Version%201.0/AddingFood.gif)
 
