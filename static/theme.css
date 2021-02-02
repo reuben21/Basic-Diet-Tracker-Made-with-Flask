@@ -16,3 +16,13 @@ body {
 .theme-showcase .navbar .container {
   width: auto;
 }
+
+.nav_button_color {
+  background-color: #f6f5f5;
+  color:#f6f5f5;
+}
+
+.nav_button_color:hover {
+  background-color: #f6f5f5;
+  color:#f6f5f5;
+}
