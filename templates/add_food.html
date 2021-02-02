@@ -7,10 +7,11 @@
 
     <title>Food Tracker | Add Food</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static',filename='bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static',filename='theme.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
     <style>
         body {
             background-color: #d3e0ea;
@@ -19,37 +20,45 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg" style="background-color: #1687a7;color:#f6f5f5;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}"
+           style="background-color: #1687a7;color:#f6f5f5 !important; ">Food Tracker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#f6f5f5 !important;" aria-current="page"
+                       href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" style="background-color: #f6f5f5;
+                          color:#1687a7;" href="{{ url_for('food') }}">Add Food</a>
+                </li>
 
-<nav class="navbar navbar-fixed-top" style="background-color: #1687a7;color:#f6f5f5; ">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url_for('index') }}"
-               style="background-color: #1687a7;color:#f6f5f5 !important; ">Food
-                Tracker</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a style="color:#f6f5f5 !important;" href="{{ url_for('index') }}">Home</a></li>
-                <li style="background-color: #f6f5f5;
-                           color:#1687a7;"><a style="color:#1687a7 !important;" href="{{ url_for('food') }}">Add Food
-                    Item</a></li>
             </ul>
+
         </div>
     </div>
 </nav>
 
-<div class="container theme-showcase col-sm-6 col-sm-offset-3" role="main">
+
+<div class="container" role="main">
 
     <div class="row">
         <div>
 
-            <div class="panel " style="background-color:#f6f5f5;border: 1px solid #276678;">
+            <div class="panel"
+                 style="background-color:#f6f5f5;border: 1px solid #276678;margin:20px;border-radius: 5px;">
 
                 <div class="panel-heading" style="background-color:#276678;color:#f6f5f5">
-                    <h3 class="panel-title">Foods</h3>
+                    <h3 class="panel-title" style="padding: 10px;">Foods</h3>
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body" style="padding:10px;">
 
                     <form method="POST" action="{{ url_for('food') }}">
                         <div class="form-group">
@@ -72,25 +81,42 @@
                             <input type="number" class="form-control" id="fat"
                                    name="fat" placeholder="Fat">
                         </div>
-                        <button type="submit" class="btn" style="background-color:#276678;color:#f6f5f5;">Add</button>
+                        <button type="submit" class="btn" style="
+                        background-color:#276678;
+                        color:#f6f5f5;
+                        margin:20px 0px;
+                        ">Add
+                        </button>
                     </form>
 
                     <div class="page-header"></div>
                     {% for food in results %}
-                        <ul class="nav nav-pills" role="tablist">
-                            <li style="background-color:#276678;color:#f6f5f5;border-radius: 5px;"><a
-                                    style="color:#f6f5f5;">{{ food[0] }}</a></li>
-                            <li><a style="color:#276678;">Protein: <span class="badge"
-                                                                         style="color: #f6f5f5;">{{ food[1] }}</span></a>
+                        <ul class="nav " role="tablist">
+                            <li class="btn"
+                                style="
+                                background-color:#276678;
+                                color:#f6f5f5;
+                                border-radius: 5px;">
+                                <a
+                                        style="color:#f6f5f5;margin-top:10px;">
+                                    {{ food[0] }}
+                                </a></li>
+                            <li><a style="color:#276678;margin:0px 10px;">
+                                Protein:
+                                <span class="badge bg-secondary"
+                                      style="color: #f6f5f5;">
+                                    {{ food[1] }}</span></a>
                             </li>
-                            <li><a style="color:#276678;">Carbohydrates: <span class="badge"
-                                                                               style="color: #f6f5f5;">{{ food[2] }}</span></a>
+                            <li><a style="color:#276678;margin:0px 10px;">Carbohydrates:
+                                <span class="badge bg-secondary" style="color: #f6f5f5;">{{ food[2] }}</span></a>
                             </li>
-                            <li><a style="color:#276678;">Fat: <span class="badge"
-                                                                     style="color: #f6f5f5;">{{ food[3] }}</span></a>
+                            <li><a style="color:#276678;margin:0px 10px;">
+                                Fat:
+                                <span class="badge bg-secondary"
+                                      style="color: #f6f5f5;">{{ food[3] }}</span></a>
                             </li>
-                            <li><a style="color:#276678;">Calories: <span class="badge"
-                                                                          style="color: #f6f5f5;">{{ food[4] }}</span></a>
+                            <li><a style="color:#276678;margin:0px 10px;">Calories: <span class="badge bg-secondary"
+                                                                                          style="color: #f6f5f5;">{{ food[4] }}</span></a>
                             </li>
                         </ul><br>
                     {% endfor %}
