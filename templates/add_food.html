@@ -11,21 +11,28 @@
     <link href="{{ url_for('static',filename='bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static',filename='theme.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d3e0ea;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #1687a7;color:#f6f5f5; ">
+<nav class="navbar navbar-fixed-top" style="background-color: #1687a7;color:#f6f5f5; ">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url_for('index') }}" style="background-color: #1687a7;color:#f6f5f5 !important; ">Food
+            <a class="navbar-brand" href="{{ url_for('index') }}"
+               style="background-color: #1687a7;color:#f6f5f5 !important; ">Food
                 Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a style="color:#f6f5f5 !important;" href="{{ url_for('index') }}">Home</a></li>
                 <li style="background-color: #f6f5f5;
-                           color:#1687a7;"><a style="color:#1687a7 !important;" href="{{ url_for('food') }}">Add Food Item</a></li>
+                           color:#1687a7;"><a style="color:#1687a7 !important;" href="{{ url_for('food') }}">Add Food
+                    Item</a></li>
             </ul>
         </div>
     </div>
@@ -36,9 +43,9 @@
     <div class="row">
         <div>
 
-            <div class="panel panel-primary">
+            <div class="panel " style="background-color:#f6f5f5;border: 1px solid #276678;">
 
-                <div class="panel-heading">
+                <div class="panel-heading" style="background-color:#276678;color:#f6f5f5">
                     <h3 class="panel-title">Foods</h3>
                 </div>
 
@@ -65,17 +72,26 @@
                             <input type="number" class="form-control" id="fat"
                                    name="fat" placeholder="Fat">
                         </div>
-                        <button type="submit" class="btn btn-success">Add</button>
+                        <button type="submit" class="btn" style="background-color:#276678;color:#f6f5f5;">Add</button>
                     </form>
 
                     <div class="page-header"></div>
                     {% for food in results %}
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="active"><a>{{ food[0] }}</a></li>
-                            <li><a>Protein: <span class="badge">{{ food[1] }}</span></a></li>
-                            <li><a>Carbohydrates: <span class="badge">{{ food[2] }}</span></a></li>
-                            <li><a>Fat: <span class="badge">{{ food[3] }}</span></a></li>
-                            <li><a>Calories: <span class="badge">{{ food[4] }}</span></a></li>
+                            <li style="background-color:#276678;color:#f6f5f5;border-radius: 5px;"><a
+                                    style="color:#f6f5f5;">{{ food[0] }}</a></li>
+                            <li><a style="color:#276678;">Protein: <span class="badge"
+                                                                         style="color: #f6f5f5;">{{ food[1] }}</span></a>
+                            </li>
+                            <li><a style="color:#276678;">Carbohydrates: <span class="badge"
+                                                                               style="color: #f6f5f5;">{{ food[2] }}</span></a>
+                            </li>
+                            <li><a style="color:#276678;">Fat: <span class="badge"
+                                                                     style="color: #f6f5f5;">{{ food[3] }}</span></a>
+                            </li>
+                            <li><a style="color:#276678;">Calories: <span class="badge"
+                                                                          style="color: #f6f5f5;">{{ food[4] }}</span></a>
+                            </li>
                         </ul><br>
                     {% endfor %}
                 </div>
